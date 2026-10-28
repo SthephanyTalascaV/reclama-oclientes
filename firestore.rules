@@ -1,0 +1,11 @@
+rules_version = '2';
+// O navegador NUNCA lê nem grava o Firestore diretamente.
+// Todo acesso passa pela API (Admin SDK), que verifica o login, o domínio
+// @nibo.com.br, valida os dados e grava o histórico de alterações.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

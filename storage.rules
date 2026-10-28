@@ -1,0 +1,10 @@
+rules_version = '2';
+// Prints de conversas contêm dados pessoais: sem acesso público.
+// A API grava com o Admin SDK e entrega links assinados que expiram em 10 minutos.
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

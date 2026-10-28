@@ -1,0 +1,15 @@
+{
+  "indexes": [],
+  "fieldOverrides": [
+    {
+      "collectionGroup": "complaints",
+      "fieldPath": "ocrText",
+      "indexes": []
+    },
+    {
+      "collectionGroup": "complaints",
+      "fieldPath": "ai",
+      "indexes": []
+    }
+  ]
+}
